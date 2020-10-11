@@ -31,6 +31,7 @@ client.on("message", message => {
   }
 });
 
+
 client.on("message", message => {
   let args = message.content.split(" ");
   if (message.content.startsWith(prefix + "register")) {
