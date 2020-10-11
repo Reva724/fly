@@ -26,7 +26,7 @@ client.on("message", message => {
       setTimeout(() => {
         channel.overwritePermissions(role, { SEND_MESSAGES: false });
         msg.edit(`<@${message.author.id}> closed`);
-      }, 1000 * 45);
+      }, 1000 * args[1]);
     });
   }
 });
