@@ -6,7 +6,7 @@ const timezone = require("moment-timezone");
 const fs = require("fs");
 const request = require("request");
 const prefix = "!";
-const { Collection, RichEmbed } = require("discord.js");
+const { Collection } = require("discord.js");
 
 const beautify = require("js-beautify");
 const { inspect } = require("util");
@@ -16,15 +16,15 @@ client.on("message", message => {
   let args = message.content.split(" "),
     cmd = args[0];
   if (cmd === prefix + "register") {
-    if (message.channel.id !== "747034924447694940") return;
-    let channel = client.channels.get("750747951705489448"),
+    if (message.channel.id !== "773617175630053416") return;
+    let channel = client.channels.cache.get("750747951705489448"),
       role = message.member.guild.roles.find(
         role => role.id === "755215445069398156"
       );
-    channel.overwritePermissions(role, { SEND_MESSAGES: true });
+    channel.updateOverwrite(role, { SEND_MESSAGES: true });
     message.reply(" Opened").then(msg => {
       setTimeout(() => {
-        channel.overwritePermissions(role, { SEND_MESSAGES: false });
+        channel.updateOverwrite(role, { SEND_MESSAGES: false });
         msg.edit(`<@${message.author.id}> closed`);
       }, 1000 * args[1]);
     });
@@ -43,7 +43,7 @@ client.on("message", message => {
       );
       R.remove();
       message.react("➰").then(RR => {
-        message.member.addRole(role);
+        message.member.roles.add(role);
         RR.remove();
         message.react("✅");
       });
