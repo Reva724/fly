@@ -39,6 +39,6 @@
     "util": "^0.12.3",
     "common-tags": "^1.8.0" },
   "engines": {
-    "node": "8.x"
+    "node": "11.x"
   }
 }
