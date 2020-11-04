@@ -37,8 +37,9 @@
     "js-beautify": "^1.13.0",
     "node-cmd": "^3.0.0",
     "util": "^0.12.3",
-    "common-tags": "^1.8.0" },
+    "common-tags": "^1.8.0" 
+  },
   "engines": {
-    "node": "12.x"
+    "node": "11.x"
   }
 }
