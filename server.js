@@ -18,7 +18,7 @@ client.on("message", message => {
   if (cmd === prefix + "register") {
     if (message.channel.id !== "747034924447694940") return;
     let channel = client.channels.cache.get("750747951705489448"),
-      role = message.member.guild.roles.find(
+      role = message.member.guild.roles.cache.find(
         role => role.id === "755215445069398156"
       );
     channel.updateOverwrite(role, { SEND_MESSAGES: true });
@@ -38,7 +38,7 @@ client.on("message", message => {
     if (message.channel.id !== "773617175630053416") return;
     if (!args[1]) return message.react("❌");
     message.react("➿").then(R => {
-      let role = message.member.guild.roles.find(
+      let role = message.member.guild.roles.cache.find(
         role => role.id === "764440793695125505"
       );
       R.remove();
