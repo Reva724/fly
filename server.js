@@ -16,7 +16,7 @@ client.on("message", message => {
   let args = message.content.split(" "),
     cmd = args[0];
   if (cmd === prefix + "register") {
-    if (message.channel.id !== "773617175630053416") return;
+    if (message.channel.id !== "747034924447694940") return;
     let channel = client.channels.cache.get("750747951705489448"),
       role = message.member.guild.roles.find(
         role => role.id === "755215445069398156"
@@ -35,7 +35,7 @@ client.on("message", message => {
 client.on("message", message => {
   let args = message.content.split(" ");
   if (message.content.startsWith(prefix + "register")) {
-    if (message.channel.id !== "750747951705489448") return;
+    if (message.channel.id !== "773617175630053416") return;
     if (!args[1]) return message.react("❌");
     message.react("➿").then(R => {
       let role = message.member.guild.roles.find(
